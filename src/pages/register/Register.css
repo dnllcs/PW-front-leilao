@@ -1,4 +1,4 @@
-.login-container {
+.register-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
     background-color: #f5f5f5;
 }
 
-.login-card {
+.register-card {
     width: 400px;
 }
 
@@ -15,28 +15,25 @@
     margin-bottom: 1.5rem;
 }
 
+.p-icon-field {
+    width: 100%;
+}
+
 .text-input,
 .password  {
     width: 100%;
 }
 
-.password-recovery-link,
-.register-link {
+.login-link {
     margin-top: 1rem;
     text-align: center;
 }
 
-.password-recovery-link a,
-.register-link a {
+.login-link a {
     color: #007ad9;
     text-decoration: none;
 }
 
-.password-recovery-link a:hover,
-.register-link a:hover {
+.login-link a:hover {
     text-decoration: underline;
-}
-
-.p-icon-field {
-    width: 100%;
 }
