@@ -5,10 +5,12 @@ import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
+import { useTranslation } from 'react-i18next';
 
 function Login() {
     const [user, setUser] = useState({ email: "", password:""});
     const navigate = useNavigate();
+    const {t} = useTranslation();
 
     const handleChange = (input) => {
         setUser({...user, [input.target.name]:input.target.value});
@@ -36,7 +38,7 @@ function Login() {
                     <label htmlFor="Senha">Senha</label>
                     <Password onChange={handleChange} name="password" type="text" className="password" inputStyle={{ width: '100%' }} feedback={false} toggleMask />
                 </div>
-                <Button onClick={login} label="Login" className="button" />
+                <Button onClick={login} label={t('login')} className="button" />
                 <div className="password-recovery-link">
                     <Link to="/password-recovery">Esqueceu a senha?</Link>
                 </div>

@@ -10,6 +10,7 @@ import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import PrivateRouter from './components/PrivateRouter';
 import PasswordChange from './pages/change-password/PasswordChange';
+import './config/i18n';
 
 function App() {
   return (

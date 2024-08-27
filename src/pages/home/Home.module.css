@@ -1,4 +1,4 @@
-.home-container {
+.homeContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
     background-color: #eef1f8;
 }
 
-.home-card {
+.homeCard {
     width: 400px;
 }
 
