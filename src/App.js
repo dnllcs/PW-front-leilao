@@ -11,6 +11,7 @@ import 'primereact/resources/primereact.min.css';
 import PrivateRouter from './components/PrivateRouter';
 import PasswordChange from './pages/change-password/PasswordChange';
 import './config/i18n';
+import Profile from './pages/profile/Profile';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route element={<PrivateRouter/>}>
           <Route path='/' element={<DefaultLayout><Home /></DefaultLayout>} /> 
+          <Route path='/user/profile' element={<DefaultLayout><Profile /></DefaultLayout>} /> 
         </Route>
         <Route path="/login" element={<SimpleLayout><Login/></SimpleLayout>} />
         <Route path="/register" element={<SimpleLayout><Register /></SimpleLayout>} />
