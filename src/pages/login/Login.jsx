@@ -6,29 +6,33 @@ import { Button } from 'primereact/button';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { useTranslation } from 'react-i18next';
+import AuthenticationService from '../../services/AuthenticationService';
 
 function Login() {
     const [user, setUser] = useState({ email: "", password:""});
     const navigate = useNavigate();
     const {t} = useTranslation();
+    const authenticationService = new AuthenticationService();
 
     const handleChange = (input) => {
         setUser({...user, [input.target.name]:input.target.value});
     }
-    
-    const login = () => {
-        if (user.email === "@gmail.com" && user.password === "123") {
-            let token = "token do backend";
+
+    const login = async () => {
+        try {
+            const response = await authenticationService.login(user);
+            let token = response.token;
             localStorage.setItem("token", token);
             localStorage.setItem("email", user.email);
             navigate("/");
-        }else {
-            alert('usuário ou senha incorretos');
+        } catch (err) {
+            console.log(err);
+            alert("usuário ou senha incorretos");
         }
     }
 
     return (
-        <div className="login-container">
+        <div className="login-container"> 
             <Card title="Login" className="login-card">
                 <div className="field">
                     <label htmlFor="email">Email</label>
